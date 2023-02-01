@@ -1,0 +1,25 @@
+.nav-styles {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent 0 20px,
+    black 20px 40px
+  );
+  .container {
+    background-color: white;
+    .navbar-brand {
+      padding: 0.1em;
+      font-size: 2em;
+      font-family: "Caveat", cursive;
+    }
+    .ada {
+      font-family: "Big Shoulders Display", cursive;
+    }
+    .navbar-toggler {
+      background-color: white;
+    }
+    .navbar-collapse {
+      padding: 0.1em;
+      background-color: white;
+    }
+  }
+}
