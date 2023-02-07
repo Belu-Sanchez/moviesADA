@@ -1,7 +1,10 @@
+import { Banner } from "../../components/commons";
+
 const Dashboard = () => {
     return (
-        <div>Dashboard</div>
-
+        <> 
+        <Banner />
+        </>
     );
 }
 
