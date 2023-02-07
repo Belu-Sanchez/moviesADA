@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import { apiMovies, endpoints } from "../../../utils/axios";
-import { Props } from "./types";
+import { BannerMovie } from "./types";
 import { BASE_IMAGE } from "../../../constants";
 import "./styles.scss";
 
 const Banner = () => {
-  const [movies, setMovies] = useState<Props[]>([]);
+  const [movies, setMovies] = useState<BannerMovie[]>([]);
 
   useEffect(() => {
     apiMovies

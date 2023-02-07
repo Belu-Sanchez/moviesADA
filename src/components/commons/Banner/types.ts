@@ -1,4 +1,4 @@
-export type Props = {
+export type Movie = {
   id: number;
   title: String;
   overview: String;
