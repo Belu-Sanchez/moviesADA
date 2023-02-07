@@ -1,39 +1,41 @@
 import { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
-import { endpoints } from "../../../utils/axios";
+import { apiMovies, endpoints } from "../../../utils/axios";
 import { Props } from "./types";
-import './styles.scss';
-
+import { BASE_IMAGE } from "../../../constants";
+import "./styles.scss";
 
 const Banner = () => {
+  const [movies, setMovies] = useState<Props[]>([]);
 
-    const [movies, setMovies] = useState<Props[]>([])
+  useEffect(() => {
+    apiMovies
+      .get(endpoints.MOVIE_UPCOMING)
+      .then((response) => setMovies(response.data.results));
+  }, []);
 
-    useEffect(() => {
-        endpoints.apiMovies.get(endpoints.MOVIE_UPCOMING).then(response => setMovies(response.data.results))
-    }, [])
+  if (movies.length >= 20) {
+    movies.splice(movies.length - 15, 19);
+  }
+  return (
+    <>
+      <Carousel fade>
+        {movies.map((movie) => (
+          <Carousel.Item key={movie.id}>
+            <img
+              className="d-block w-100 card-img-top "
+              src={`${BASE_IMAGE + movie.backdrop_path}`}
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>{movie.title}</h3>
+              <p>{movie.overview}</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
+    </>
+  );
+};
 
-    if (movies.length >= 20) {
-        movies.splice(movies.length - 15, 19);
-    }
-    return (
-        <>
-            <Carousel fade>{movies.map(movie => (
-                <Carousel.Item key={movie.id}>
-                    <img
-                        className="d-block w-100 card-img-top "
-                        src={`${endpoints.BASE_IMAGE + movie.backdrop_path}`}
-                        alt="First slide"
-                    />
-                    <Carousel.Caption>
-                        <h3>{movie.title}</h3>
-                        <p>{movie.overview}</p>
-                    </Carousel.Caption>
-                </Carousel.Item>
-            ))}
-            </Carousel>
-        </>
-    );
-}
-
-export { Banner }
+export { Banner };
