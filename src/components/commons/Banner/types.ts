@@ -1,4 +1,4 @@
-export type Movie = {
+export type BannerMovie = {
   id: number;
   title: String;
   overview: String;
