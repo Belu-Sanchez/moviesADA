@@ -1,9 +1,11 @@
-import { Banner } from "../../components/commons";
+import { Banner, PostersScroll } from "../../components/commons";
+import { PopularMovies } from "../Popular";
 
 const Dashboard = () => {
     return (
         <> 
         <Banner />
+        <PostersScroll />
         </>
     );
 }
