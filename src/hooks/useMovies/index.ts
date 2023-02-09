@@ -25,6 +25,7 @@ const getId = async (id:string): Promise<Details> => {
     ///842544
     const response = await apiMovies.get(`/movie/${id}`)
    console.log(response)
+   
     return response.data.results
 }
 //https://api.themoviedb.org/3/movie/842544?api_key=<<api_key>>&language=en-US

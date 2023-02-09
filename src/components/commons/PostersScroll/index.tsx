@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { Navigate, NavLink, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { BASE_IMAGE } from "../../../constants";
 import { useMovies } from "../../../hooks";
 import './styles.scss';
@@ -9,18 +9,26 @@ const PostersScroll = () => {
 
     const data = useMovies();
     const [id, setId] = useState(Number)
+    const [searchParams, setSearchParams] = useSearchParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         if (id) {
             data.getId(`${id}`)
-          
+            navigate(`movie/${id}`);
+
         } else {
             data.getAllPopular()
         }
 
     }, [id]);
 
+    
+    if(id > 0 ){
+       // setSearchParams({movie: `${id}`})
 
+    }
+  
     return (
         <>
 
