@@ -14,3 +14,5 @@ export const apiMovies = axios.create({
     api_key: "0df0bd9988c9e9f56e2bc6d6b20adce2",
   },
 });
+
+
