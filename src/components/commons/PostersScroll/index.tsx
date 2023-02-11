@@ -1,48 +1,55 @@
 import { useEffect, useState } from "react";
-import { Navigate, NavLink, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { Posters } from "..";
 import { BASE_IMAGE } from "../../../constants";
-import { useMovies } from "../../../hooks";
+import { useMovies } from "../../../services";
+import { PosterScroll } from "../../../services/movies/types";
 import './styles.scss';
 
 
 const PostersScroll = () => {
-
-    const data = useMovies();
-    const [id, setId] = useState(Number)
-    const [searchParams, setSearchParams] = useSearchParams();
+    const [popular, setPopular] = useState<PosterScroll[]>([]);
+    const [topRated, setTopRated] = useState<PosterScroll[]>([]);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (id) {
-            data.getId(`${id}`)
-            navigate(`movie/${id}`);
 
+    const data = useMovies();
+
+    useEffect(() => {
+        if (data.id) {
+            data.getId(`${data.id}`)
+            navigate(`movie/${data.id}`);
         } else {
-            data.getAllPopular()
+            data.getAllPopular().then(response => setPopular(response))
+            data.getAllTopRated().then(response => setTopRated(response))
         }
 
-    }, [id]);
+    }, [data.id]);
+ 
 
-    
-    if(id > 0 ){
-       // setSearchParams({movie: `${id}`})
-
-    }
-  
     return (
         <>
-
-            <div className="scroll">
-                <h6 className="title">Polular movies</h6>
-                <div className="row pb-4">{data.popular.map(movie => (
-                    <img className="col card-block" key={movie.id} onClick={() => setId(movie.id)}
+            <Posters title={'Popular Movies'}> 
+            <div className="row pb-4">{popular.map(movie => (
+                    <img className="col card-block" key={movie.id} onClick={() => data.setId(movie.id)}
                         src={`${BASE_IMAGE + movie.poster_path}`}
                         alt="First slide"
                     />
 
                 ))}
-                </div>
-            </div>
+                </div>   
+            </Posters>
+
+            <Posters title={'Top Rated Movies'}> 
+            <div className="row pb-4">{topRated.map(movie => (
+                    <img className="col card-block" key={movie.id} onClick={() => data.setId(movie.id)}
+                        src={`${BASE_IMAGE + movie.poster_path}`}
+                        alt="First slide"
+                    />
+
+                ))}
+                </div>   
+            </Posters>
         </>
     );
 }
