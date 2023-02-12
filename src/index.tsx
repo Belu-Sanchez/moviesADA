@@ -16,14 +16,6 @@ root.render(
       <Route index element={<Dashboard />} />
       <Route path="movie/:id" element={<Details />} /> 
       </Route>
-{/* 
-      <Route path="users/">
-          <Route index element={<Users />} /> 
-           <Route path="save" element={<FormUser />} />
-          <Route path="save/:id" element={<FormUser />} /> 
-         </Route> */}
-
-
     </Routes>
   </BrowserRouter>
  

@@ -1,28 +1,27 @@
 import { useEffect, useState } from "react";
 import { Carousel } from "react-bootstrap";
 import { BASE_IMAGE } from "../../../constants";
+import { BannerMovie } from "./types";
+import { getBanner } from "../../../services/movies";
 import "./styles.scss";
-import { useMovies } from "../../../services";
-import { BannerMovie } from "../../../services/movies/types";
 
 const Banner = () => {
-  const [banner, setBanner] = useState<BannerMovie[]>([]);
-  const data = useMovies();
+  const [movies, setMovies] = useState<BannerMovie[]>([]);
 
   useEffect(() => {
-    data.getBanner().then(response => setBanner(response))
+    getBanner().then(response => setMovies(response))
 
   }, []);
 
 
-  if (banner.length >= 20) {
-    banner.splice(banner.length - 15, 19);
+  if (movies.length >= 20) {
+    movies.splice(movies.length - 15, 19);
   }
 
   return (
     <>
       <Carousel fade>
-        {banner.map((movie) => (
+        {movies.map((movie) => (
           <Carousel.Item key={movie.id}>
             <img
               className="d-block w-100 card-img-top "

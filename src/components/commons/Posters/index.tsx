@@ -1,19 +1,17 @@
-import { FC} from "react";
-import './styles.scss';
+import { FC } from "react";
 import { Props } from "./types";
+import './styles.scss';
 
 
-const Posters: FC<Props> = ({ title, children, }) => {
+const Posters: FC<Props> = ({ title, children, variant }) => {
 
 
     return (
         <>
             <div className="scroll">
                 <h6 className="title">{title}</h6>
-                <div className="row pb-4" >
-                    <div className="col card-block" >
-                        {children}
-                    </div>
+                <div className={`${variant}`} >
+                    {children}
                 </div>
             </div>
         </>
