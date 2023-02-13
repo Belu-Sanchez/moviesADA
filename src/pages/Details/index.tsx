@@ -1,11 +1,7 @@
-
 const Details = () => {
 
     return (
-        <>
-            <h6 className="title">Details</h6>
-        </>
-
+        <h6 className="title">Details</h6>
     );
 }
 

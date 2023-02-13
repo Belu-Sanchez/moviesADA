@@ -1,0 +1,1 @@
+export { getAllPopular, getAllTopRated, getBanner, getById } from './movies'

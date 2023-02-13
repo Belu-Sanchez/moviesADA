@@ -1,7 +1,4 @@
-import { ReactNode } from "react";
-
-export type Props = {
-    title: String
-    children?: ReactNode;
-    variant: String
+export type PostersMovies = {
+    items: [] | any
+    text: String | any
 }

@@ -1,12 +1,9 @@
-import { FC, useState } from "react";
-import './styles.scss';
+import { FC } from "react";
 import { BASE_IMAGE } from "../../../constants";
 import { useNavigate } from "react-router-dom";
+import { PostersMovies } from "./types";
+import './styles.scss';
 
-type PostersMovies = {
-    items: [] | any
-    text: String | any
-}
 
 const Posters: FC<PostersMovies> = ({ items, text }) => {
 
@@ -14,7 +11,6 @@ const Posters: FC<PostersMovies> = ({ items, text }) => {
 
 
     return (
-
         <div className="scroll">
             <h6 className="title">{text}</h6>
             <div className="row pb-4">{items?.map((item: any) =>
@@ -22,11 +18,9 @@ const Posters: FC<PostersMovies> = ({ items, text }) => {
                     src={`${BASE_IMAGE + item.poster_path}`}
                     alt="First slide"
                 />
-
             )}
             </div>
         </div>
-
     );
 }
 

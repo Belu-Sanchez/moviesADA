@@ -1,47 +1,29 @@
 import { useEffect, useState } from "react";
 import { Banner, Posters } from "../../components/commons";
-import { getAllPopular, getAllTopRated } from "../../services/movies";
-import { PosterScroll } from "./types";
+import { getAllPopular, getAllTopRated, getBanner } from "../../services";
 
 const Dashboard = () => {
-
-    const [popular, setPopular] = useState<PosterScroll[]>([]);
-    const [topRated, setTopRated] = useState<PosterScroll[]>([]);
+    const [movies, setMovies] = useState([]);
+    const [popular, setPopular] = useState([]);
+    const [topRated, setTopRated] = useState([]);
 
     useEffect(() => {
+        getBanner().then(response => setMovies(response))
         getAllPopular().then(response => setPopular(response))
         getAllTopRated().then(response => setTopRated(response))
 
     }, []);
 
 
-
-
-    // useEffect(() => {
-    //     // if (id) {
-    //     //     getById(`${id}`)
-    //     //     navigate(`movie/${id}`);
-    //     // } else {
-    //         getAllPopular().then(response => setPopular(response))
-    //     //     getAllTopRated().then(response => setTopRated(response))
-    //     // }
-
-    // }, []);
-
-
-
-
-
-
-
-
+    if (movies.length >= 20) {
+        movies.splice(movies.length - 15, 19);
+    }
 
     return (
-        <> 
-        <Banner />
-        <Posters items={popular} text={"Popular Movies"} />
-        <Posters items={topRated} text={"Top Rated Movies"} />
-
+        <>
+            <Banner items={movies} />
+            <Posters items={popular} text={"Popular Movies"} />
+            <Posters items={topRated} text={"Top Rated Movies"} />
         </>
     );
 }
