@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from './App';
-import { Dashboard } from './pages';
+import { Dashboard, Details } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
@@ -14,6 +14,7 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}>
       <Route index element={<Dashboard />} />
+      <Route path="movie/:id" element={<Details />} /> 
       </Route>
     </Routes>
   </BrowserRouter>
