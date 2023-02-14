@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from './App';
-import { Dashboard } from './pages';
+import { Dashboard, Search } from './pages';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
@@ -14,6 +14,8 @@ root.render(
     <Routes>
       <Route path="/" element={<App />}>
       <Route index element={<Dashboard />} />
+      <Route path="search" element={<Search />} /> 
+
       </Route>
     </Routes>
   </BrowserRouter>
