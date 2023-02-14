@@ -8,16 +8,17 @@ const Dashboard = () => {
     const [topRated, setTopRated] = useState([]);
 
     useEffect(() => {
+
         getBanner().then(response => setMovies(response))
+
+        if (movies.length >= 20) {
+            movies.splice(movies.length - 15, 19);
+        }
+
         getAllPopular().then(response => setPopular(response))
         getAllTopRated().then(response => setTopRated(response))
-
     }, []);
 
-
-    if (movies.length >= 20) {
-        movies.splice(movies.length - 15, 19);
-    }
 
     return (
         <>
