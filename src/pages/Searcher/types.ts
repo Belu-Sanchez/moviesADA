@@ -1,3 +1,3 @@
-export type FilterFilds = {
+export type FilterFields = {
     query?: string
 }
