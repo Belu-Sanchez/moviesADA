@@ -1,28 +1,31 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import { Grid } from "../../components/commons";
+import { FormSearch } from "../../components/Forms";
+import { getBySearch } from "../../services/movies";
+import { FilterFilds } from './types';
 
-const Search = () => {
+const SearchMovies = () => {
+    const [movies, setMovies] = useState([]);
+    const [searchParams, setSeacrhParams] = useSearchParams("")
 
     useEffect(() => {
-    })
+        const query = searchParams.get('query')
+        getBySearch(query || "").then(response => setMovies(response))
+    }, [searchParams])
+
+
+    const setSearchQuery = (params: FilterFilds) => {
+        setSeacrhParams(params)
+    }
 
     return (
-        <>
-
-
-            <div >
-                <label htmlFor="">Search</label>
-                <input
-                    type="text"
-                    name="text"
-                // value={fields.text}
-                // onChange={e => setFileds(prevState => ({ ...prevState, text: e.target.value }))}
-                />
-            </div>
-        </>
-
-
+        <div>
+            <FormSearch onSearch={setSearchQuery} />
+            <Grid items={movies} />
+        </div>
     );
 }
 
-export { Search };
+export { SearchMovies };
 

@@ -13,7 +13,7 @@ const NavBar = () => {
           <Nav className="ms-auto justify-content-end">
           <Nav.Link href="/recently">Recently Movies</Nav.Link>
           <Nav.Link href="/popular">Popular Movies</Nav.Link>
-          <NavLink className="nav-link" to="/search">Search</NavLink>
+          <NavLink className="nav-link" to="/search/movie">Search</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
