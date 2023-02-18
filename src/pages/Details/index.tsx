@@ -1,38 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { BASE_IMAGE } from "../../constants";
+import { Detail } from "../../components/commons";
 import { getById } from "../../services";
-type Props = {
-    title?: String,
-    overview: String,
-    poster_path: String
 
-}
+
 const Details = ({ }) => {
     const { id } = useParams();
-    const [detail, setDetails] = useState<Props[]>([])
+    const [detail, setDetails] = useState([])
 
     useEffect(() => {
-
-        getById(id || "").then(response => setDetails([{
-            title: response.title,
-            overview: response.overview,
-            poster_path: response.poster_path
-        }]))
+        getById(id || "").then(response => setDetails(response))
     }, [])
 
 
     return (
-        <>
-            <h6 className="title">{detail[0].title}</h6>
-            <p>{detail[0].overview}</p>
-            <img className="col card-block"
-                src={`${BASE_IMAGE + detail[0].poster_path}`}
-                alt="First slide"
-            />
-
-
-        </>
+        
+        <Detail items={detail}/>
+        
     );
 }
 

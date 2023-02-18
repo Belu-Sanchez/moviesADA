@@ -1,0 +1,17 @@
+.container-detail {
+  display: flex;
+  .img-detail {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1em;
+    img {
+      width: 50%;
+    }
+  }
+  .text {
+    p {
+      width: 60%;
+      text-align: justify;
+    }
+  }
+}
