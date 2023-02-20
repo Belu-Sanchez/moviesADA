@@ -8,3 +8,6 @@ export const apiMovies = axios.create({
 });
 
 
+export const apiFB = axios.create({
+  baseURL: 'https://movies-app-4872f-default-rtdb.firebaseio.com/'
+})
