@@ -21,4 +21,10 @@ const getById = async (id: string) => {
   return response.data.results;
 };
 
-export { getBanner, getAllPopular, getAllTopRated, getById };
+const getBySearch = async (query?: string) => {
+  const response = await apiMovies.get(endpoints.SEARCH_MOVIE, {params: {query}});
+  return response.data.results;
+  
+};
+
+export { getBanner, getAllPopular, getAllTopRated, getById, getBySearch};

@@ -1,4 +1,5 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 import './styles.scss'
 
 const NavBar = () => {
@@ -12,7 +13,7 @@ const NavBar = () => {
           <Nav className="ms-auto justify-content-end">
           <Nav.Link href="/recently">Recently Movies</Nav.Link>
           <Nav.Link href="/popular">Popular Movies</Nav.Link>
-          <Nav.Link href="/search">Search</Nav.Link>
+          <NavLink className="nav-link" to="/search/movie">Search</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
