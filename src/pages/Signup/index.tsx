@@ -1,5 +1,5 @@
+import './styles.scss';
 import { SignUpForm } from '../../components/forms'
-import './styles.scss'
 
 const SignUp = () => {
     return (
