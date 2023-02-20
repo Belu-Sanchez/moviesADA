@@ -18,7 +18,7 @@ const getAllTopRated = async () => {
 
 const getById = async (id: string) => {
   const response = await apiMovies.get(`/movie/${id}`);
-  return response.data.results;
+  return response.data;
 };
 
 const getBySearch = async (query?: string) => {
