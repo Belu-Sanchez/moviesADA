@@ -1,10 +1,13 @@
 import { FC, useState } from "react";
-import { Props, defaultValue } from './types';
+import { Props, FormField } from './types';
 import { MdSavedSearch } from 'react-icons/md';
 import './styles.scss';
 
 const FormSearch: FC<Props> = ({ onSearch }) => {
 
+    const defaultValue: FormField = {
+        query: ""
+    }
     const [fields, setFields] = useState(defaultValue)
 
     const handelSubmit = (e: any) => {
