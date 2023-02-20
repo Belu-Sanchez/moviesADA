@@ -18,9 +18,6 @@ const Detail: FC<Details> = ({ items }) => {
                 <h2 className="title">{items.title}</h2>
                 <p>{items.overview}</p>
             </div>
-
-
-
         </div>
 
     );
