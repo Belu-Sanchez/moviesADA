@@ -10,14 +10,8 @@ const PopularMovies = () => {
         getAllPopular().then(response => setMovies(response))
     }, [])
 
-    console.log(movies)
     return (
-        <>
         <Grid items={movies} text={"Popular movies"}/>
-        </>
-  
-
-
     );
 }
 

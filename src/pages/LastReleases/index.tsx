@@ -11,9 +11,7 @@ const LastReleases = () => {
         getAllLastReleases().then(response => setMovies(response))
 
     }, [])
-    console.log(movies)
-
-
+    
     return (
 
         <>
@@ -23,12 +21,7 @@ const LastReleases = () => {
                 </p>
                 <Detail items={movies} />
             </div>
-
         </>
-
-
-
-
     );
 }
 
