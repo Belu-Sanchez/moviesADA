@@ -1,33 +1,34 @@
 import { useEffect, useState } from "react";
-import { Grid } from "../../components/commons";
-import { getAllLastReleases, getAllTopRated } from "../../services/movies";
+import { Detail } from "../../components/commons";
+import { getAllLastReleases } from "../../services/movies";
+import './styles.scss';
 
 const LastReleases = () => {
 
     const [movies, setMovies] = useState([]);
-    const [ top, setTopRated] = useState([])
 
     useEffect(() => {
-        // getBySearch(query || "").then(response => setMovies(response))
-      getAllLastReleases().then(response => setMovies(response))
-        // getAllTopRated().then(response => setMovies(response))
+        getAllLastReleases().then(response => setMovies(response))
 
     }, [])
-console.log(movies)
+    console.log(movies)
 
-   
+
     return (
-    
-    <>
-        <div>Last releases</div>
-        <Grid items={movies} />
-        {/* <Grid items={top} /> */}
 
-    </>
+        <>
+            <div className="recently">
+                <h2>Recently Movie</h2>
+                <p>Get the most newly created movie. This is a live response and will continuously change.
+                </p>
+                <Detail items={movies} />
+            </div>
+
+        </>
 
 
-        
- 
+
+
     );
 }
 

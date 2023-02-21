@@ -9,10 +9,11 @@ const PopularMovies = () => {
     useEffect(() => {
         getAllPopular().then(response => setMovies(response))
     }, [])
+
+    console.log(movies)
     return (
         <>
-        <div>Popular movies</div>
-        <Grid items={movies} />
+        <Grid items={movies} text={"Popular movies"}/>
         </>
   
 
