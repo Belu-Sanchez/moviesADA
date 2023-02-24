@@ -11,9 +11,10 @@ const NavBar = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto justify-content-end">
-          <Nav.Link href="/recently">Recently Movies</Nav.Link>
-          <Nav.Link href="/popular">Popular Movies</Nav.Link>
-          <NavLink className="nav-link" to="/search/movie">Search</NavLink>
+          <NavLink className="nav-link" to="/recently">Recently Movie</NavLink>
+          <NavLink className="nav-link" to="/popular">Popular Movies</NavLink>
+          <NavLink className="nav-link" to="/topRated">Top Rated Movies</NavLink>
+          <NavLink className="nav-link text-white bg-dark" to="/search/movie">Search</NavLink>
           </Nav>
         </Navbar.Collapse>
       </Container>
