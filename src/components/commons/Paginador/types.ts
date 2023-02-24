@@ -1,6 +1,5 @@
 export type Page = {
-    maxPage: number
+    totalPages: number
     onClick: (page: string) => void
-
 }
 
