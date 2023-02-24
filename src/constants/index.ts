@@ -7,4 +7,4 @@ export const endpoints = {
     MOVIE_UPCOMING: "/movie/upcoming",
     MOVIE_LATEST: "/movie/latest",
   };
-  
+ 
