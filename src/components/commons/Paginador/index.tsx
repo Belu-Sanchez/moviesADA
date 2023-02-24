@@ -6,27 +6,22 @@ import { Page } from './types';
 
 const CustomPagination: FC<Page> = ({ maxPage, onClick}) => {
 
-  
     const [input, setInput] = useState(1)
 
     const firstPage = () => {
         setInput(1)
-     
     }
-
     const prevPage = () => {
         setInput(input - 1)
     }
     const nextPage = () => {
         setInput(input + 1)
     }
-
     const lastPage = () => {
-        setInput(maxPage)
-      
+        setInput(maxPage) 
     }
   
-    const [page, setPage] = useState("")
+    const [page, setPage] = useState("1")
 
     useEffect(() => {
         onClick(page)
@@ -35,13 +30,13 @@ const CustomPagination: FC<Page> = ({ maxPage, onClick}) => {
     return (
 
         <Pagination onClickCapture={()=> setPage(input.toString())} >
-            <Pagination.First onClick={firstPage} />
-            <Pagination.Prev onClick={prevPage} />
+            <Pagination.First disabled={page === "1"} onClick={firstPage} />
+            <Pagination.Prev disabled={page === "1"} onClick={prevPage} />
 
             <Pagination.Item value={page}>{page}</Pagination.Item>
 
-            <Pagination.Next onClick={nextPage} />
-            <Pagination.Last onClick={lastPage} />
+            <Pagination.Next disabled={page === maxPage.toString()} onClick={nextPage} />
+            <Pagination.Last disabled={page === maxPage.toString()} onClick={lastPage} />
         </Pagination>
 
     )

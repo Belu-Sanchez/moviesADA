@@ -25,7 +25,7 @@ const getBySearch = async (params: {query?: string, page?: string}) => {
   const response = await apiMovies.get(endpoints.SEARCH_MOVIE, {
     params
   });
-  return response.data.results;
+  return response.data;
 };
 
 export { getBanner, getAllPopular, getAllTopRated, getById, getBySearch };
