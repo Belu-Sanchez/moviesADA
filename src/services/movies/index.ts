@@ -27,5 +27,5 @@ const getBySearch = async (params: {query?: string, page?: string}) => {
   });
   return response.data;
 };
-getAllLastReleases 
+
 export { getBanner, getAllPopular, getAllTopRated, getById, getBySearch };
