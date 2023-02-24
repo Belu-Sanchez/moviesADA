@@ -25,16 +25,8 @@ const CustomPagination: FC<Page> = ({ maxPage, onClick}) => {
         setInput(maxPage)
       
     }
-    //     () =>
-    //     activePage !== pages && setActivePage((page) => page + 1)
-    //   }
-    // const defaultValue: PageField = {
-    //     query: "",
-    //     page: ""
-    // }
+  
     const [page, setPage] = useState("")
-
-
 
     useEffect(() => {
         onClick(page)
@@ -46,7 +38,7 @@ const CustomPagination: FC<Page> = ({ maxPage, onClick}) => {
             <Pagination.First onClick={firstPage} />
             <Pagination.Prev onClick={prevPage} />
 
-            <Pagination.Item value={page}>{input}</Pagination.Item>
+            <Pagination.Item value={page}>{page}</Pagination.Item>
 
             <Pagination.Next onClick={nextPage} />
             <Pagination.Last onClick={lastPage} />

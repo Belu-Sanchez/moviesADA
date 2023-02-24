@@ -4,7 +4,3 @@ export type Page = {
 
 }
 
-export type PageField = {
-    query: "",
-    page?: string
-}

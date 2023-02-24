@@ -20,10 +20,7 @@ const getById = async (id: string) => {
   const response = await apiMovies.get(`/movie/${id}`);
   return response.data;
 };
-// const search = async (params: { query: string; page: string }) => {
-//   const response = await api.movies.get("/search/movie", { params });
-//   return response.data;
-// };
+
 const getBySearch = async (params: {query?: string, page?: string}) => {
   const response = await apiMovies.get(endpoints.SEARCH_MOVIE, {
     params
