@@ -1,7 +1,8 @@
 export type Props = {
-    onSearch: (params: FormField) => void
+    onSearch: (text: string) => void
 }
 
-export type FormField = {
-    query?: string
-}
+// export type FormField = {
+//     query?: string
+//     page?:string
+// }
