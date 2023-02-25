@@ -6,14 +6,19 @@ const getBanner = async () => {
   return response.data.results;
 };
 
-const getAllPopular = async () => {
-  const response = await apiMovies.get(endpoints.MOVIE_POPULAR);
-  return response.data.results;
+const getAllPopular = async (page?: string) => {
+  const response = await apiMovies.get(endpoints.MOVIE_POPULAR, {params: {page}});
+  return response.data;
 };
 
 const getAllTopRated = async () => {
   const response = await apiMovies.get(endpoints.MOVIE_TOP_RATED);
   return response.data.results;
+};
+
+const getAllLastReleases = async () => {
+  const response = await apiMovies.get(endpoints.MOVIE_LATEST);
+  return response.data;
 };
 
 const getById = async (id: string) => {
@@ -28,4 +33,4 @@ const getBySearch = async (params: {query?: string, page?: string}) => {
   return response.data;
 };
 
-export { getBanner, getAllPopular, getAllTopRated, getById, getBySearch };
+export { getBanner, getAllPopular, getAllTopRated, getAllLastReleases, getById, getBySearch };
