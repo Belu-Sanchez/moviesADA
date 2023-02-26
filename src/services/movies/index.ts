@@ -11,9 +11,9 @@ const getAllPopular = async (page?: string) => {
   return response.data;
 };
 
-const getAllTopRated = async () => {
-  const response = await apiMovies.get(endpoints.MOVIE_TOP_RATED);
-  return response.data.results;
+const getAllTopRated = async (page?: string) => {
+  const response = await apiMovies.get(endpoints.MOVIE_TOP_RATED, {params: {page}});
+  return response.data;
 };
 
 const getAllLastReleases = async () => {

@@ -10,8 +10,8 @@ const Dashboard = () => {
     useEffect(() => {
 
         getBanner().then(response => setMovies(response.splice(0, 5)))
-        getAllPopular().then(response => setPopular(response))
-        getAllTopRated().then(response => setTopRated(response))
+        getAllPopular().then(response => setPopular(response.results))
+        getAllTopRated().then(response => setTopRated(response.results))
     }, []);
 
 
