@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { CustomPagination, Grid } from "../../components/commons";
+import { withAuth } from "../../hoc";
 import { getAllTopRated } from "../../services";
 
-const TopRatedMovies = () => {
+const TopRatedMoviesPage = () => {
 
     const [movies, setMovies] = useState([]);
     const [totalPage, setTotalPages] = useState(Number);
@@ -33,4 +34,4 @@ const TopRatedMovies = () => {
     );
 }
 
-export { TopRatedMovies };
+export const TopRatedMovies = withAuth(TopRatedMoviesPage);

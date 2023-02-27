@@ -1,7 +1,9 @@
-const Forgot = () => {
+import { withAuth } from "../../hoc";
+
+const ForgotPage = () => {
     return (
        <div>Forgot</div>
     );
 }
 
-export { Forgot };
+export const Forgot = withAuth(ForgotPage);

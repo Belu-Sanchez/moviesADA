@@ -1,7 +1,10 @@
-const SignUp = () => {
+import { SignUpForm } from "../../components/forms";
+import { withAuth } from "../../hoc";
+
+const SignUpPage = () => {
     return (
-       <div>Sign up</div>
+        <SignUpForm />
     );
 }
 
-export { SignUp };
+export const SignUp = withAuth(SignUpPage);

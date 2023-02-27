@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { Banner, Posters } from "../../components/commons";
+import { withAuth } from "../../hoc";
 import { getAllPopular, getAllTopRated, getBanner } from "../../services";
 
-const Dashboard = () => {
+const DashboardPage = () => {
     const [movies, setMovies] = useState([]);
     const [popular, setPopular] = useState([]);
     const [topRated, setTopRated] = useState([]);
@@ -24,4 +25,5 @@ const Dashboard = () => {
     );
 }
 
-export { Dashboard };
+export const Dashboard = withAuth(DashboardPage);
+

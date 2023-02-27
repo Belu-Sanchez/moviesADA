@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { CustomPagination, Grid } from "../../components/commons";
-import { FormSearch } from "../../components/Forms";
+import { FormSearch } from "../../components/forms";
 import { ImageMeme } from "../../components/images";
+import { withAuth } from "../../hoc";
 import { getBySearch } from "../../services/movies";
 
-const SearchMovies = () => {
+const SearchMoviesPage = () => {
     const [movies, setMovies] = useState([]);
     const [totalPage, setTotalPages] = useState(Number);
 
@@ -46,5 +47,5 @@ const SearchMovies = () => {
     );
 }
 
-export { SearchMovies };
+export const SearchMovies = withAuth(SearchMoviesPage);
 
