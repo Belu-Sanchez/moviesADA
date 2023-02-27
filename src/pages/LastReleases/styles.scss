@@ -1,0 +1,13 @@
+.recently {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .container-detail {
+    display: flex;
+    .img-detail {
+      width: 50%;
+      display: flex;
+      margin-right: 1em;
+    }
+  }
+}

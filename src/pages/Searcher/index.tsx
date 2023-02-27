@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import { Grid } from "../../components/commons";
-import { FormSearch } from "../../components/forms";
+import { FormSearch } from "../../components/Forms";
 import { ImageMeme } from "../../components/images";
 import { getBySearch } from "../../services/movies";
 import { FilterFields } from './types';
