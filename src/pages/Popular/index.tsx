@@ -11,14 +11,15 @@ const PopularMovies = () => {
     const [searchParams, setSearchParams] = useSearchParams()
 
     useEffect(() => {
+        setSearchParams(params);
+    }, [params]);
 
-        setSearchParams(params)
-
+    useEffect(() => {
         getAllPopular(searchParams.get('page') || "").then(response => {
             setMovies(response.results)
             setTotalPages(response.total_pages)
         })
-    }, [searchParams, params])
+    }, [searchParams])
 
     const setQuery = (page: string) => {
         setParams(prevState => ({ ...prevState, page: page }))

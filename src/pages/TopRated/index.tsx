@@ -9,15 +9,17 @@ const TopRatedMovies = () => {
     const [totalPage, setTotalPages] = useState(Number);
     const [params, setParams] = useState({ page: '1' })
     const [searchParams, setSearchParams] = useSearchParams()
-    
     useEffect(() => {
-        setSearchParams(params)
+        setSearchParams(params);
+      }, [params]);
+
+    useEffect(() => {
         getAllTopRated(searchParams.get('page') || "").then(response => {
              setMovies(response.results)
              setTotalPages(response.total_pages)
         }
            )
-    }, [searchParams, params])
+    }, [searchParams])
 
     const setQuery = (page: string) => {
         setParams(prevState => ({ ...prevState, page: page }))
@@ -26,7 +28,6 @@ const TopRatedMovies = () => {
         <>
             <Grid items={movies} text={"Top Rated Movies"} />
             <CustomPagination totalPages={totalPage} onClick={setQuery} />
-
         </>
 
     );

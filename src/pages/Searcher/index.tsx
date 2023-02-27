@@ -12,9 +12,12 @@ const SearchMovies = () => {
     const [params, setParams] = useState({ page: '1', query: '' })
     const [searchParams, setSearchParams] = useSearchParams()
 
-    useEffect(() => {
-        setSearchParams(params)
 
+    useEffect(() => {
+        setSearchParams(params);
+      }, [params]);
+
+    useEffect(() => {
         const page = searchParams.get('page')
         const query = searchParams.get('query')
 
@@ -23,7 +26,7 @@ const SearchMovies = () => {
             setTotalPages(response.total_pages)
         })
 
-    }, [searchParams, params])
+    }, [searchParams])
 
     const setSearchQuery = (text: string) => {
         setParams(prevState => ({ ...prevState, query: text }))
