@@ -1,0 +1,11 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  .page-item {
+    background-color: black;
+    padding: 0.1em;
+    .page-link {
+      color: black;
+    }
+  }
+}
