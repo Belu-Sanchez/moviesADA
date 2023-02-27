@@ -1,1 +1,2 @@
-export { FormSearch } from './FormSearcher';
+export { FormSearch } from './FormSearch';
+export { SignUp as SignUpForm } from './SignUp';
