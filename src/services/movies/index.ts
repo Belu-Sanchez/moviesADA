@@ -6,14 +6,14 @@ const getBanner = async () => {
   return response.data.results;
 };
 
-const getAllPopular = async () => {
-  const response = await apiMovies.get(endpoints.MOVIE_POPULAR);
-  return response.data.results;
+const getAllPopular = async (page?: string) => {
+  const response = await apiMovies.get(endpoints.MOVIE_POPULAR, {params: {page}});
+  return response.data;
 };
 
-const getAllTopRated = async () => {
-  const response = await apiMovies.get(endpoints.MOVIE_TOP_RATED);
-  return response.data.results;
+const getAllTopRated = async (page?: string) => {
+  const response = await apiMovies.get(endpoints.MOVIE_TOP_RATED, {params: {page}});
+  return response.data;
 };
 
 const getAllLastReleases = async () => {
@@ -26,10 +26,11 @@ const getById = async (id: string) => {
   return response.data;
 };
 
-const getBySearch = async (query?: string) => {
-  const response = await apiMovies.get(endpoints.SEARCH_MOVIE, {params: {query}});
-  return response.data.results;
-  
+const getBySearch = async (params: {query?: string, page?: string}) => {
+  const response = await apiMovies.get(endpoints.SEARCH_MOVIE, {
+    params
+  });
+  return response.data;
 };
 
-export { getBanner, getAllPopular, getAllTopRated, getAllLastReleases, getById, getBySearch};
+export { getBanner, getAllPopular, getAllTopRated, getAllLastReleases, getById, getBySearch };

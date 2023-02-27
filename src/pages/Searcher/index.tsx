@@ -1,31 +1,47 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { Grid } from "../../components/commons";
+import { CustomPagination, Grid } from "../../components/commons";
 import { FormSearch } from "../../components/Forms";
 import { ImageMeme } from "../../components/images";
 import { getBySearch } from "../../services/movies";
-import { FilterFields } from './types';
 
 const SearchMovies = () => {
     const [movies, setMovies] = useState([]);
-    const [searchParams, setSearchParams] = useSearchParams("")
+    const [totalPage, setTotalPages] = useState(Number);
+
+    const [params, setParams] = useState({ page: '1', query: '' })
+    const [searchParams, setSearchParams] = useSearchParams()
+
 
     useEffect(() => {
+        setSearchParams(params);
+      }, [params]);
+
+    useEffect(() => {
+        const page = searchParams.get('page')
         const query = searchParams.get('query')
-        getBySearch(query || "").then(response => setMovies(response))
+
+        getBySearch({ query: query || "", page: page || "" }).then((response) => {
+            setMovies(response.results)
+            setTotalPages(response.total_pages)
+        })
+
     }, [searchParams])
 
+    const setSearchQuery = (text: string) => {
+        setParams(prevState => ({ ...prevState, query: text }))
+    }
 
-    const setSearchQuery = (params: FilterFields) => {
-        setSearchParams(params)
+    const setQuery = (page: string) => {
+        setParams(prevState => ({ ...prevState, page: page }))
     }
 
     return (
         <div>
             <FormSearch onSearch={setSearchQuery} />
             <Grid items={movies} />
-            { movies.length <= 0 && <ImageMeme />}
-            
+            {movies.length <= 0 && <ImageMeme />}
+            <CustomPagination totalPages={totalPage} onClick={setQuery} />
         </div>
     );
 }
