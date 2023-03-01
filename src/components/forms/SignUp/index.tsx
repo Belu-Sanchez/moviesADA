@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form';
 import { servicesUser } from '../../../services/users';
 import { SignUpForm } from '../../../types'
 import { useNavigate } from 'react-router-dom';
-import { Button } from '..';
-import { Logo } from '../../commons';
+import { Button, Logo } from '../../commons';
 import './styles.scss';
 
 

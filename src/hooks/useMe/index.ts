@@ -8,7 +8,6 @@ const useMe = () => {
   const { me, setMe } = useContext(AuthContext);
 
   const login = async ({ email, pass }: LoginForm) => {
-    console.info("login");
     const user = await servicesUser.getBy("email", email);
 
     if (user && user.password === pass) {
@@ -21,17 +20,13 @@ const useMe = () => {
       localStorage.setItem("token", token);
 
       setMe({ id, name, lastname, email });
-    } else {
-      console.log("Incorrect login");
-    }
+    } 
   };
 
   const signup = (user: Omit<User, "id">) => {
-    console.info("signup");
   };
 
   const loginWithToken = async () => {
-    console.info("loginWithToken");
     const token = localStorage.getItem("token");
 
     if (token && !me) {

@@ -1,8 +1,9 @@
 import { useNavigate } from "react-router-dom";
-import { Button, LoginForm } from "../../components/forms";
+import { LoginForm } from "../../components/forms";
 import { withAuth } from "../../hoc";
 import { FaUserPlus } from "react-icons/fa";
 import './styles.scss'
+import { Button } from "../../components/commons";
 
 const LoginPage = () => {
     const navigate = useNavigate();

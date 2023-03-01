@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form';
 import { NavLink } from 'react-router-dom';
 import { useMe } from '../../../hooks/useMe';
 import { LoginForm } from '../../../types';
-import { Logo } from '../../commons';
-import { Button } from '../Button';
+import { Button, Logo } from '../../commons';
 import './styles.scss';
 
 const Login = () => {
