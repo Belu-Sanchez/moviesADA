@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Detail } from "../../components/commons";
+import { withAuth } from "../../hoc";
 import { getById } from "../../services";
 
 
-const Details = ({ }) => {
+const DetailsPage = ({ }) => {
     const { id } = useParams();
     const [detail, setDetails] = useState([])
 
@@ -20,4 +21,5 @@ const Details = ({ }) => {
     );
 }
 
-export { Details };
+export const Details = withAuth(DetailsPage);
+

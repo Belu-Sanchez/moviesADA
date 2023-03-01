@@ -1,0 +1,29 @@
+.container-form {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    align-items: center;
+  
+    .container-sign-in {
+      color: white;
+      padding: 2em;
+      width: 29rem;
+      background-color: black;
+      .btn-form {
+        background-color: white;
+        border: solid 1px;
+        margin-bottom: 0.5em;
+      }
+      .btn-form:active,
+      .btn-form:hover {
+        background-color: rgb(0, 0, 0);
+        border: white 2px solid;
+      }
+      a:link,
+      a:visited,
+      a:active {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }

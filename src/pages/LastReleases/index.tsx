@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Detail } from "../../components/commons";
+import { withAuth } from "../../hoc";
 import { getAllLastReleases } from "../../services/movies";
 import './styles.scss';
 
-const LastReleases = () => {
+const LastReleasesPage = () => {
 
     const [movies, setMovies] = useState([]);
 
@@ -25,4 +26,4 @@ const LastReleases = () => {
     );
 }
 
-export { LastReleases };
+export const LastReleases = withAuth(LastReleasesPage)
