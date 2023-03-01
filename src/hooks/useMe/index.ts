@@ -42,8 +42,12 @@ const useMe = () => {
     }
   };
 
+  const logout = async () => {
+    await servicesUser.update({ id: me?.id, token: null });
+    setMe(undefined);
+  };
 
-  return { me, login, signup, loginWithToken };
+  return { me, login, signup, loginWithToken, logout };
 };
 
 export { useMe };
