@@ -5,10 +5,15 @@ import { useMe } from '../../../hooks/useMe';
 import { LoginForm } from '../../../types';
 import { Button, Logo } from '../../commons';
 import './styles.scss';
+import { defaultValues } from './defaultValues';
+import { validationSchema } from './validationSchema';
 
 const Login = () => {
 
-    const { register, handleSubmit } = useForm<LoginForm>();
+    const { register, handleSubmit, formState } = useForm<LoginForm>({
+        defaultValues,
+        resolver: validationSchema
+    });
     const { login } = useMe();
 
     const onSubmit = (data: LoginForm) => {
@@ -31,6 +36,7 @@ const Login = () => {
                                 Enter email"
                             {...register("email")}
                         />
+                        <Form.Text className="text-danger">{formState.errors.email?.message}</Form.Text>
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -42,6 +48,8 @@ const Login = () => {
                             autoComplete="off"
                             {...register("pass")}
                         />
+                        <Form.Text className="text-danger">{formState.errors.pass?.message}</Form.Text>
+
                     </Form.Group>
 
                     <Button variant='form' type='submit' >Submit</Button>
