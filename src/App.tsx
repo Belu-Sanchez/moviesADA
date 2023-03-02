@@ -6,7 +6,7 @@ import { AuthProvider } from "./contexts/auth";
 import { StoreProvider } from "./contexts";
 
 function App() {
-  const { loginWithToken } = useMe();
+  const { loginWithToken, me } = useMe();
 
   useEffect(() => {
     loginWithToken();
@@ -16,7 +16,7 @@ function App() {
     <>
       <AuthProvider>
         <StoreProvider>
-          <Header />
+          {!me && <Header />}
           <Main >
             <Outlet />
           </Main>
