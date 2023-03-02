@@ -8,6 +8,7 @@ import './styles.scss'
 
 const SignUpPage = () => {
 
+
     const navigate = useNavigate();
 
     return (
@@ -23,6 +24,7 @@ const SignUpPage = () => {
         </>
 
     );
+
 }
 
 export const SignUp = withAuth(SignUpPage);
