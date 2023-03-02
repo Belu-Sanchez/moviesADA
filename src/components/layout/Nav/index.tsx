@@ -8,6 +8,7 @@ const NavBar = () => {
   
   const { logout } = useMe();
 
+
   return (
     <Navbar collapseOnSelect expand="lg" className="nav-styles">
       <Container>
@@ -19,7 +20,9 @@ const NavBar = () => {
             <NavLink className="nav-link" to="/popular">Popular Movies</NavLink>
             <NavLink className="nav-link" to="/topRated">Top Rated Movies</NavLink>
             <NavLink className="nav-link text-white bg-dark" to="/search/movie">Search</NavLink>
+
             <Nav.Link className='fw-bold' onClick={logout}>Sign Out</Nav.Link>
+
           </Nav>
         </Navbar.Collapse>
       </Container>
