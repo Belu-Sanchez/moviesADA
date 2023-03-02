@@ -1,11 +1,16 @@
+import { useMe } from '../../../hooks';
 import { NavBar } from '../Nav';
 
 const Header = () => {
-  return (
-    <header>
-      <NavBar />
-    </header>
+  
+  const { me } = useMe();
 
+  return (
+    <>
+      {me && <header>
+        <NavBar />
+      </header>}
+    </>
   );
 };
 
