@@ -16,7 +16,7 @@ function App() {
     <>
       <AuthProvider>
         <StoreProvider>
-          {!me && <Header />}
+          {me && <Header />}
           <Main >
             <Outlet />
           </Main>
