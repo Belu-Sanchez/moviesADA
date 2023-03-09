@@ -1,5 +1,4 @@
 import { Button } from "../../components/commons";
-import { SignUpForm } from "../../components/forms";
 import { withAuth } from "../../hoc";
 import { IoLogInSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
@@ -20,7 +19,6 @@ const SignUpPage = () => {
                     handleClick={() => navigate('/login')}
                 ><IoLogInSharp /></Button>
             </div>
-            <SignUpForm />
         </>
 
     );
