@@ -1,20 +1,19 @@
 import { Footer, Header, Main } from './components/layout';
 import { Outlet } from 'react-router-dom';
-import { useMe } from './hooks';
-import { useEffect } from 'react';
+
 
 
 function App() {
 
-  const { loginWithToken, me } = useMe();
+  // const { loginWithToken, me } = useMe();
 
-  useEffect(() => {
-    loginWithToken();
-  }, []);
+  // useEffect(() => {
+  //   loginWithToken();
+  // }, []);
 
   return (
     <>
-      {me && <Header />}
+       <Header />
       <Main >
         <Outlet />
       </Main>

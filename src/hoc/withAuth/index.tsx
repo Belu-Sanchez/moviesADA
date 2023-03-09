@@ -2,7 +2,7 @@ import { FC, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom";
 import { useMe } from "../../hooks/useMe";
 
-const publicRoutes = ["/login", "/signup"];
+const publicRoutes = ["/signup"];
 
 const withAuth = (Component: FC): FC => {
     const Authenticated = () => {
