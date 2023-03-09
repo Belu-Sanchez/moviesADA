@@ -7,7 +7,8 @@ import { StoreProvider } from "./contexts";
 
 function App() {
 
-  const { loginWithToken } = useMe();
+  const { loginWithToken, me} = useMe();
+  console.log(me)
 
   useEffect(() => {
     loginWithToken();
