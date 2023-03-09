@@ -5,7 +5,7 @@ import { withAuth } from "../../hoc";
 import { getAllPopular } from "../../services";
 
 const PopularMoviesPage = () => {
-
+    
     const [movies, setMovies] = useState([]);
     const [totalPage, setTotalPages] = useState(Number);
     const [params, setParams] = useState({ page: '1' })
