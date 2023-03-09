@@ -12,7 +12,7 @@ const NavBar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="nav-styles">
       <Container>
-        <Navbar.Brand>Movies <span className="ada">ADA</span></Navbar.Brand>
+        <NavLink className="nav-link navbar-brand" to="/">Movies <span className="ada">ADA</span></NavLink>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto justify-content-end">
