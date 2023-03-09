@@ -3,6 +3,7 @@ import { withAuth } from "../../hoc";
 import { IoLogInSharp } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import './styles.scss'
+import { SignUpForm } from "../../components/forms";
 
 
 const SignUpPage = () => {
@@ -19,6 +20,7 @@ const SignUpPage = () => {
                     handleClick={() => navigate('/login')}
                 ><IoLogInSharp /></Button>
             </div>
+            <SignUpForm />
         </>
 
     );
