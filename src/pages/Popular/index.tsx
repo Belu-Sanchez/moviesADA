@@ -19,7 +19,7 @@ const PopularMoviesPage = () => {
         getAllPopular(searchParams.get('page') || "").then(response => {
             setMovies(response.results)
             setTotalPages(response.total_pages)
-        })
+        }).catch(response => alert("Oops! Can't load the most popular silver, please reenter."))
     }, [searchParams])
 
     const setQuery = (page: string) => {

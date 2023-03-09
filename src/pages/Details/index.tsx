@@ -10,7 +10,7 @@ const DetailsPage = ({ }) => {
     const [detail, setDetails] = useState([])
 
     useEffect(() => {
-        getById(id || "").then(response => setDetails(response))
+        getById(id || "").then(response => setDetails(response)).catch(response => alert("oops! Cannot load detailed movies, please reenter."))
     }, [])
 
 

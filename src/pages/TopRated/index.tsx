@@ -19,7 +19,7 @@ const TopRatedMoviesPage = () => {
              setMovies(response.results)
              setTotalPages(response.total_pages)
         }
-           )
+           ).catch(response => alert("oops! Cannot load top rated movies, please reenter."))
     }, [searchParams])
 
     const setQuery = (page: string) => {
