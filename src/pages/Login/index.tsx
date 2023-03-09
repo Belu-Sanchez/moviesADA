@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import { LoginForm } from "../../components/forms";
 import { withAuth } from "../../hoc";
 import { FaUserPlus } from "react-icons/fa";
 import './styles.scss'
@@ -16,7 +15,6 @@ const LoginPage = () => {
                     handleClick={() => navigate('/signup')}
                 ><FaUserPlus /></Button>
             </div>
-            <LoginForm />
         </>
     );
 }
