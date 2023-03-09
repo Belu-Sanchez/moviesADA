@@ -24,7 +24,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="container-form">
+    <div className="container-form-signup">
       <Logo />
       <div className="container-sign-up ">
         <h3 className="title-form">Create account</h3>
