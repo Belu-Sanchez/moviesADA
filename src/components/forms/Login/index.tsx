@@ -8,7 +8,7 @@ import './styles.scss';
 import { defaultValues } from './defaultValues';
 import { validationSchema } from './validationSchema';
 
-const Login = () => {
+const FormLogin = () => {
 
     const { register, handleSubmit, formState } = useForm<LoginForm>({
         defaultValues,
@@ -62,4 +62,4 @@ const Login = () => {
     )
 }
 
-export { Login };
+export { FormLogin };
