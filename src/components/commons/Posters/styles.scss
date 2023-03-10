@@ -1,19 +1,22 @@
 .scroll {
-    overflow-x: auto;
-    margin-top: 2em;
-    .title{
-      font-size: 1.5em;
-    }
-    .row {
-      flex-wrap: nowrap;
-      .card-block {
-        height: 300px;
-        transition: all 0.2s ease-in-out;
-        border-radius: 15%;
-        &:hover {
-          transform: translateY(-5px);
-          opacity: 0.9;
-        }
+  overflow-x: auto;
+  margin-top: 2em;
+  .title {
+    font-size: 1.5em;
+  }
+  .row {
+    flex-wrap: nowrap;
+    .card-block {
+      height: 300px;
+      transition: all 0.2s ease-in-out;
+      border-radius: 15%;
+      &:hover {
+        transform: translateY(-5px);
+        opacity: 0.9;
+      }
+      @media (min-width: 200px) and (max-width: 570px) {
+        height: 250px;
       }
     }
   }
+}

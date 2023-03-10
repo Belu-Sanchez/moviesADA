@@ -2,16 +2,16 @@
   padding-bottom: 2em;
   background-image: repeating-linear-gradient(
     -45deg,
-     #FEFBE9 0 20px,
-    #7DB9B6 20px 40px
+    #fefbe9 0 20px,
+    #7db9b6 20px 40px
   );
   .container {
-    background-color:  #7DB9B6;
+    background-color: #7db9b6;
     box-shadow: 2px 5px 10px #405c5b;
     .navbar-brand {
       padding: 0.1em;
       font-size: 2em;
-      color:#b3712a;
+      color: #b3712a;
       font-family: "Caveat", cursive;
     }
     .ada {
@@ -19,12 +19,11 @@
       font-family: "Big Shoulders Display", cursive;
     }
     .navbar-toggler {
-      background-color:  #7DB9B6;
+      background-color: #7db9b6;
     }
     .navbar-collapse {
       padding: 0.1em;
-      background-color: #7DB9B6;
-      
+      background-color: #7db9b6;
     }
   }
 }
