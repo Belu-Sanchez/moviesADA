@@ -1,25 +1,29 @@
 .nav-styles {
+  padding-bottom: 2em;
   background-image: repeating-linear-gradient(
     -45deg,
-    transparent 0 20px,
-    black 20px 40px
+     #FEFBE9 0 20px,
+    #7DB9B6 20px 40px
   );
   .container {
-    background-color: white;
+    background-color:  #7DB9B6;
+    box-shadow: 2px 5px 10px #405c5b;
     .navbar-brand {
       padding: 0.1em;
       font-size: 2em;
+      color:#b3712a;
       font-family: "Caveat", cursive;
     }
     .ada {
+      color: #b3712a;
       font-family: "Big Shoulders Display", cursive;
     }
     .navbar-toggler {
-      background-color: white;
+      background-color:  #7DB9B6;
     }
     .navbar-collapse {
       padding: 0.1em;
-      background-color: white;
+      background-color: #7DB9B6;
       
     }
   }

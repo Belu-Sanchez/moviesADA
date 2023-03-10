@@ -16,7 +16,7 @@ const SignUpPage = () => {
             <div className="signup">
                 <Button
                     type="button"
-                    variant="outline-dark btn-tabla m-2"
+                    variant="btn-tabla m-2"
                     handleClick={() => navigate('/login')}
                 ><IoLogInSharp /></Button>
             </div>
