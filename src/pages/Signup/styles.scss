@@ -1,7 +1,18 @@
 .signup {
   display: flex;
   justify-content: flex-end;
+  button {
+    background-color: #7db9b6;
+    border: solid #f0a04b;
+    &:hover,
+    &:active{
+      background-color: #f0a04b;
+      border: solid #7db9b6;
+    }
+  
+  }
   svg {
     font-size: 2em;
+    color: #fefbe9;
   }
 }

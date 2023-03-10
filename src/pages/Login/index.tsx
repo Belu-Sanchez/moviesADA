@@ -12,7 +12,7 @@ const LoginPage = () => {
             <div className="login">
                 <Button
                     type="button"
-                    variant="outline-dark btn-tabla m-2"
+                    variant="btn-tabla m-2"
                     handleClick={() => navigate('/signup')}
                 ><FaUserPlus /></Button>
             </div>

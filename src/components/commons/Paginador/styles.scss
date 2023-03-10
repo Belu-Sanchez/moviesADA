@@ -1,11 +1,11 @@
 .pagination {
   display: flex;
   justify-content: center;
+  margin-bottom: 0px;
+  padding-bottom: 1em;
   .page-item {
-    background-color: black;
-    padding: 0.1em;
     .page-link {
-      color: black;
+      color: #7db9b6;
     }
   }
 }

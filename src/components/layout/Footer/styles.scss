@@ -3,14 +3,16 @@
   width: 100%;
   padding: 1.5em;
   font-size: 1.5em;
+  color:  #FEFBE9;
   font-family: "Caveat", cursive;
   background-image: repeating-linear-gradient(
     -45deg,
-    transparent 0 20px,
-    black 20px 40px
+     #FEFBE9 0 20px,
+    #7DB9B6 20px 40px
   );
   .container {
-    background-color: white;
+    background-color:#7DB9B6;
+    box-shadow: 2px 5px 10px #405c5b;
     padding: 0.2em;
     div {
       display: flex;

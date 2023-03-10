@@ -6,8 +6,8 @@
     margin: 2.5em;
     background-image: repeating-linear-gradient(
       -45deg,
-      transparent 0 20px,
-      black 20px 40px
+       #FEFBE9 0 20px,
+      #7DB9B6 20px 40px
     );
     box-shadow: 2px 10px 30px;
   
@@ -45,7 +45,7 @@
       color: white;
       padding: 2em;
       width: 29rem;
-      background-color: black;
+      background-color:  #7DB9B6;
       @media (min-width: 200px) and (max-width: 570px) {
         width: 20rem;
         display: flex;
@@ -59,8 +59,7 @@
       }
       .btn-form:active,
       .btn-form:hover {
-        background-color: rgb(0, 0, 0);
-        border: white 2px solid;
+        background-color: #709795;
       }
       a:link,
       a:visited,

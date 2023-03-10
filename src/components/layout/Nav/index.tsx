@@ -5,7 +5,7 @@ import { useMe } from "../../../hooks";
 
 
 const NavBar = () => {
-  
+
   const { logout } = useMe();
 
 
@@ -19,7 +19,7 @@ const NavBar = () => {
             <NavLink className="nav-link" to="/recently">Recently Movie</NavLink>
             <NavLink className="nav-link" to="/popular">Popular Movies</NavLink>
             <NavLink className="nav-link" to="/topRated">Top Rated Movies</NavLink>
-            <NavLink className="nav-link text-white bg-dark" to="/search/movie">Search</NavLink>
+            <NavLink className="nav-link text-white" to="/search/movie">Search</NavLink>
 
             <Nav.Link className='fw-bold' onClick={logout}>Sign Out</Nav.Link>
 
