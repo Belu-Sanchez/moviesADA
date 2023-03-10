@@ -5,5 +5,4 @@ export { Grid } from './GridMovies';
 export { CustomPagination } from './Paginador';
 export { Logo } from './Logo';
 export { Button } from '../commons/Button';
-export { Spinner } from './Spinners';
 export { Loader } from './Loader';
