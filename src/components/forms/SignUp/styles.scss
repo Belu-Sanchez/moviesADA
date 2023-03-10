@@ -3,15 +3,13 @@
   flex-direction: row-reverse;
   justify-content: space-evenly;
   align-items: center;
-  margin: 2.5em;
-  margin: 2.5em;
   background-image: repeating-linear-gradient(
     -45deg,
-    #FEFBE9 0 20px,
-      #7DB9B6 20px 40px
+    #fefbe9 0 20px,
+    #7db9b6 20px 40px
   );
-  box-shadow: 2px 10px 30px;
-    @media (min-width: 571px) and (max-width: 670px) {
+  box-shadow: 2px 10px 30px  #517977bb;
+  @media (min-width: 571px) and (max-width: 670px) {
     display: flex;
     flex-direction: column;
   }
@@ -21,7 +19,7 @@
     background-image: none;
     box-shadow: none;
   }
-    .logo {
+  .logo {
     @media (min-width: 571px) and (max-width: 670px) {
       margin: 2em;
     }
@@ -45,7 +43,7 @@
     color: white;
     padding: 2em;
     width: 28rem;
-    background-color: #7DB9B6;
+    background-color: #7db9b6;
     @media (min-width: 200px) and (max-width: 570px) {
       width: 20rem;
       display: flex;
