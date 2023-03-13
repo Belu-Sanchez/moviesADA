@@ -9,7 +9,7 @@ const LastReleasesPage = () => {
     const [movies, setMovies] = useState([]);
 
     useEffect(() => {
-        getAllLastReleases().then(response => setMovies(response)).catch(response => alert("oops! Cannot load the latest movies, please reenter."))
+       getAllLastReleases().then(response => setMovies(response)).catch(response => alert("oops! Cannot load the latest movies, please reenter."))
 
     }, [])
     

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { CustomPagination, Grid } from "../../components/commons";
+import { CustomPagination, Grid, Loader } from "../../components/commons";
 import { withAuth } from "../../hoc";
 import { getAllTopRated } from "../../services";
 
@@ -25,6 +25,9 @@ const TopRatedMoviesPage = () => {
     const setQuery = (page: string) => {
         setParams(prevState => ({ ...prevState, page: page }))
     }
+    
+    if (!movies.length) return <Loader />
+
     return (
         <>
             <Grid items={movies} text={"Top Rated Movies"} />

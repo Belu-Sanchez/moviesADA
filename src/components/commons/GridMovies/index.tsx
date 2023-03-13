@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { PostersMovies } from "./types";
 import './styles.scss';
 
-
 const Grid: FC<PostersMovies> = ({ items, text }) => {
 
     const navigate = useNavigate();

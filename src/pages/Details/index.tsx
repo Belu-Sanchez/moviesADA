@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Detail } from "../../components/commons";
+import { Detail, Loader } from "../../components/commons";
 import { withAuth } from "../../hoc";
 import { getById } from "../../services";
 
@@ -13,11 +13,9 @@ const DetailsPage = ({ }) => {
         getById(id || "").then(response => setDetails(response)).catch(response => alert("oops! Cannot load detailed movies, please reenter."))
     }, [])
 
-
     return (
-        
-        <Detail items={detail}/>
-        
+
+        <Detail items={detail} />
     );
 }
 
