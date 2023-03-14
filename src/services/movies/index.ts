@@ -26,6 +26,11 @@ const getById = async (id: string) => {
   return response.data;
 };
 
+const getByIdTailer = async (id: string) => {
+  const response = await apiMovies.get(`/movie/${id}/videos`);
+  return response.data;
+};
+
 const getBySearch = async (params: {query?: string, page?: string}) => {
   const response = await apiMovies.get(endpoints.SEARCH_MOVIE, {
     params
@@ -33,4 +38,4 @@ const getBySearch = async (params: {query?: string, page?: string}) => {
   return response.data;
 };
 
-export { getBanner, getAllPopular, getAllTopRated, getAllLastReleases, getById, getBySearch };
+export { getBanner, getAllPopular, getAllTopRated, getAllLastReleases, getById, getByIdTailer, getBySearch };
