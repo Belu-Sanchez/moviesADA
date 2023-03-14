@@ -1,4 +1,4 @@
 export type Details = {
-    items: [] | any
-
+    items: [] | any,
+    video?: [] | any
 }

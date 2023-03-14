@@ -5,19 +5,18 @@
     flex-direction: column;
   }
   .img-detail {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 1em;
+    width: 50%;
+    padding: 1em;
     img {
-      width: 60%;
+      width: 100%;
     }
   }
-  .text {
+  .info {
+    width: 50%;
     @media (min-width: 200px) and (max-width: 860px) {
       margin-left: 1em;
     }
     p {
-      width: 60%;
       text-align: justify;
     }
   }
