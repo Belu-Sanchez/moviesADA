@@ -4,32 +4,31 @@ import { Page } from './types';
 import './styles.scss';
 
 
-const CustomPagination: FC<Page> = ({ totalPages, onClick }) => {
+const CustomPagination: FC<Page> = ({ onClick }) => {
 
     const [number, setNumber] = useState(1)
-    const [page, setPage] = useState("1")
 
     const paginationAttributes = [
         function firstPage() { setNumber(1) },
         function prevPage() { setNumber(number - 1) },
         function nextPage() { setNumber(number + 1) },
-        function lastPage() { setNumber(totalPages) }
+        function lastPage() { setNumber(500) }
     ]
 
     useEffect(() => {
-        onClick(page)
-    }, [page])
+        onClick(number.toString())
+    }, [number])
 
     return (
 
-        <Pagination onClickCapture={() => setPage(number.toString())} >
-            <Pagination.First disabled={page === "1"} onClick={paginationAttributes[0]} />
-            <Pagination.Prev disabled={page === "1"} onClick={paginationAttributes[1]} />
+        <Pagination onClickCapture={() => setNumber(number)} >
+            <Pagination.First disabled={number === 1} onClick={paginationAttributes[0]} />
+            <Pagination.Prev disabled={number === 1} onClick={paginationAttributes[1]} />
 
-            <Pagination.Item value={page}>{page}</Pagination.Item>
+            <Pagination.Item value={number}>{number}</Pagination.Item>
 
-            <Pagination.Next disabled={page === totalPages.toString()} onClick={paginationAttributes[2]} />
-            <Pagination.Last disabled={page === totalPages.toString()} onClick={paginationAttributes[3]} />
+            <Pagination.Next disabled={number === 500} onClick={paginationAttributes[2]} />
+            <Pagination.Last disabled={number === 500} onClick={paginationAttributes[3]} />
         </Pagination>
 
     )
