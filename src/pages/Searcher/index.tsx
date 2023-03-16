@@ -41,7 +41,7 @@ const SearchMoviesPage = () => {
             <FormSearch onSearch={setSearchQuery} />
             <Grid items={movies} />
             {movies.length <= 0 && <ImageMeme />}
-            <CustomPagination onClick={setQuery} totalPages={totalPage}/>
+            <CustomPagination totalPages={totalPage} onClick={setQuery}/>
         </div>
     );
 }
