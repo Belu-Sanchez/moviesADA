@@ -8,6 +8,7 @@ import { getBySearch } from "../../services/movies";
 
 const SearchMoviesPage = () => {
     const [movies, setMovies] = useState([]);
+    const [totalPage, setTotalPages] = useState(Number);
     const [params, setParams] = useState({ page: '1', query: '' })
     const [searchParams, setSearchParams] = useSearchParams()
 
@@ -22,6 +23,7 @@ const SearchMoviesPage = () => {
 
         getBySearch({ query: query || "", page: page || "" }).then((response) => {
             setMovies(response.results)
+            setTotalPages(response.total_pages)
         })
 
     }, [searchParams])
@@ -39,7 +41,7 @@ const SearchMoviesPage = () => {
             <FormSearch onSearch={setSearchQuery} />
             <Grid items={movies} />
             {movies.length <= 0 && <ImageMeme />}
-            <CustomPagination onClick={setQuery} />
+            <CustomPagination onClick={setQuery} totalPages={totalPage}/>
         </div>
     );
 }

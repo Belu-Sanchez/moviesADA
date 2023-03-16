@@ -7,6 +7,7 @@ import { getAllPopular } from "../../services";
 const PopularMoviesPage = () => {
     
     const [movies, setMovies] = useState([]);
+    const [totalPage, setTotalPages] = useState(Number);
     const [params, setParams] = useState({ page: '1' })
     const [searchParams, setSearchParams] = useSearchParams()
 
@@ -17,6 +18,7 @@ const PopularMoviesPage = () => {
     useEffect(() => {
         getAllPopular(searchParams.get('page') || "").then(response => {
             setMovies(response.results)
+            setTotalPages(response.total_pages)
         }).catch(response => alert("Oops! Can't load the most popular silver, please reenter."))
     }, [searchParams])
 
@@ -29,7 +31,7 @@ const PopularMoviesPage = () => {
     return (
         <>
             <Grid items={movies} text={"Popular movies"} />
-            <CustomPagination onClick={setQuery} />
+            <CustomPagination onClick={setQuery} totalPages={totalPage}/>
         </>
 
     );

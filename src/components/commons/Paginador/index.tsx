@@ -4,7 +4,7 @@ import { Page } from './types';
 import './styles.scss';
 
 
-const CustomPagination: FC<Page> = ({ onClick }) => {
+const CustomPagination: FC<Page> = ({ totalPages, onClick }) => {
 
     const [number, setNumber] = useState(1)
 
@@ -12,7 +12,7 @@ const CustomPagination: FC<Page> = ({ onClick }) => {
         function firstPage() { setNumber(1) },
         function prevPage() { setNumber(number - 1) },
         function nextPage() { setNumber(number + 1) },
-        function lastPage() { setNumber(500) }
+        function lastPage() { setNumber(totalPages) }
     ]
 
     useEffect(() => {
@@ -27,8 +27,8 @@ const CustomPagination: FC<Page> = ({ onClick }) => {
 
             <Pagination.Item value={number}>{number}</Pagination.Item>
 
-            <Pagination.Next disabled={number === 500} onClick={paginationAttributes[2]} />
-            <Pagination.Last disabled={number === 500} onClick={paginationAttributes[3]} />
+            <Pagination.Next disabled={number === totalPages} onClick={paginationAttributes[2]} />
+            <Pagination.Last disabled={number === totalPages} onClick={paginationAttributes[3]} />
         </Pagination>
 
     )
