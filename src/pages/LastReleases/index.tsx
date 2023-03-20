@@ -14,7 +14,6 @@ const LastReleasesPage = () => {
        getByIdTailer("").then(response => setTrailer(response.results))
 
     }, [])
-    console.log(trailer)
     
     return (
 
