@@ -14,7 +14,7 @@ const Grid: FC<PostersMovies> = ({ items, text }) => {
             <div className="row pb-4">{items?.map((item: any) =>
                 <img className="col card-block" key={item.id} onClick={() => navigate(`/movie/${item.id}`)}
                     src={`${BASE_IMAGE + item.poster_path}`}
-                    alt="First slide"
+                    alt="Poster movie"
                 />
             )}
             </div>
