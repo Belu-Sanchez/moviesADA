@@ -15,21 +15,25 @@ const Detail: FC<Details> = ({ items, video }) => {
             <div className="img-detail">
                 <img
                     src={`${BASE_IMAGE + items.poster_path}`}
-                    alt="First slide"
+                    alt="Poster movie"
                 />
             </div>
             <div className="info">
                 <h2 className="title">{items.title}</h2>
                 <p>{items.overview}</p>
-                <YouTube
-                    videoId={video[0].key}
-                    id={video[0].id}
-                    className={'trailer'}
-                    opts={{
-                        height: '190',
-                        width: '340'
-                    }}
-                />
+                {
+                    video.length >= 1 &&
+                    <YouTube
+                        videoId={video[0].key}
+                        id={video[0].id}
+                        className={'trailer'}
+                        opts={{
+                            height: '190',
+                            width: '340'
+                        }}
+                    />
+
+                }
             </div>
         </div>
     );

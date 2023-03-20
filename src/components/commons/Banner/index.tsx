@@ -14,7 +14,7 @@ const Banner: FC<Slider> = ({ items }) => {
           <img
             className="d-block w-100 card-img-top "
             src={`${BASE_IMAGE + item.backdrop_path}`}
-            alt="First slide"
+            alt="Poster movie"
           />
           <Carousel.Caption>
             <h3>{item.title}</h3>
