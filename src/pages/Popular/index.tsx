@@ -31,7 +31,7 @@ const PopularMoviesPage = () => {
     return (
         <>
             <Grid items={movies} text={"Popular movies"} />
-            <CustomPagination totalPages={totalPage} onClick={setQuery} />
+            <CustomPagination totalPages={totalPage} onClick={setQuery}/>
         </>
 
     );

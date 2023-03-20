@@ -9,7 +9,6 @@ import { getBySearch } from "../../services/movies";
 const SearchMoviesPage = () => {
     const [movies, setMovies] = useState([]);
     const [totalPage, setTotalPages] = useState(Number);
-
     const [params, setParams] = useState({ page: '1', query: '' })
     const [searchParams, setSearchParams] = useSearchParams()
 
@@ -42,7 +41,7 @@ const SearchMoviesPage = () => {
             <FormSearch onSearch={setSearchQuery} />
             <Grid items={movies} />
             {movies.length <= 0 && <ImageMeme />}
-            <CustomPagination totalPages={totalPage} onClick={setQuery} />
+            <CustomPagination totalPages={totalPage} onClick={setQuery}/>
         </div>
     );
 }
