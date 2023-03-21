@@ -7,7 +7,7 @@ import YouTube from "react-youtube";
 
 
 const Detail: FC<Details> = ({ items, video }) => {
-console.log(video)
+
     if (items.length === 0) return <Loader />
 
     return (
