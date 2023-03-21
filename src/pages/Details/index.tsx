@@ -6,7 +6,7 @@ import { getById } from "../../services";
 import { getByIdTailer } from "../../services/movies";
 
 
-const DetailsPage = ({ }) => {
+const DetailsPage = () => {
     const { id } = useParams();
     const [detail, setDetails] = useState([])
     const [trailer, setTrailer] = useState([])
@@ -14,7 +14,7 @@ const DetailsPage = ({ }) => {
     useEffect(() => {
         getById(id || "").then(response => setDetails(response)).catch(response => alert("oops! Cannot load detailed movies, please reenter."));
         getByIdTailer(id || "").then(response => setTrailer(response.results)).catch(response => alert("oops! Cannot load trailer movies, please reenter."));
-    }, [])
+    }, [id])
 
     return (
         <Detail items={detail} video={trailer} />

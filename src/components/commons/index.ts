@@ -6,3 +6,4 @@ export { CustomPagination } from './Paginador';
 export { Logo } from './Logo';
 export { Button } from '../commons/Button';
 export { Loader } from './Loader';
+export { RecentlyMovie } from './RecentlyMovie';
