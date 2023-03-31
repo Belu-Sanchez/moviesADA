@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { Carousel } from "react-bootstrap";
 import { BASE_IMAGE } from "../../../constants";
-import { Slider } from "./types";
 import "./styles.scss";
+import { PostersMovies } from "../../../types";
 
 
-const Banner: FC<Slider> = ({ items }) => {
+const Banner: FC<PostersMovies> = ({ items }) => {
 
   return (
     <Carousel fade>

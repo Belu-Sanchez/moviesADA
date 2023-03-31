@@ -1,8 +1,8 @@
 import { FC } from "react";
 import { BASE_IMAGE } from "../../../constants";
 import { useNavigate } from "react-router-dom";
-import { PostersMovies } from "./types";
 import './styles.scss';
+import { PostersMovies } from "../../../types";
 
 
 const Posters: FC<PostersMovies> = ({ items, text }) => {

@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { BASE_IMAGE } from "../../../constants";
-import { LastReleases } from "./types";
 import './styles.scss'
 import { Loader } from "..";
+import { Details } from "../../../types";
 
 
-const RecentlyMovie: FC<LastReleases > = ({ items }) => {
+const RecentlyMovie: FC<Details> = ({ items }) => {
 
     if (items.length === 0) return <Loader />
 

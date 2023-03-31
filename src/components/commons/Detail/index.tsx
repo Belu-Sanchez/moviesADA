@@ -1,9 +1,9 @@
 import { FC } from "react";
 import { BASE_IMAGE } from "../../../constants";
-import { Details } from "./types";
 import './styles.scss'
 import { Loader } from "..";
 import YouTube from "react-youtube";
+import { Details } from "../../../types";
 
 
 const Detail: FC<Details> = ({ items, video }) => {
