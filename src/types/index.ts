@@ -21,6 +21,7 @@ export type SignUpPayload = SignUpForm
 export type PostersMovies = {
   items: Partial<Movie>[]
   text?: string 
+  className?: string
 }
 
 export type Details = {

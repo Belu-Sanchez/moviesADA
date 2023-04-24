@@ -21,8 +21,8 @@ const DashboardPage = () => {
     return (
         <>
             <Banner items={movies} />
-            <Posters items={popular} text={"Popular Movies"} />
-            <Posters items={topRated} text={"Top Rated Movies"} />
+            <Posters items={popular} text={"Popular Movies"} className="scroll" />
+            <Posters items={topRated} text={"Top Rated Movies"} className="scroll"/>
         </>
     );
 }

@@ -28,7 +28,7 @@ const CustomPagination: FC<Page> = ({ totalPages, onClick }) => {
             <Pagination.Item value={number}>{number}</Pagination.Item>
 
             <Pagination.Next disabled={number === totalPages} onClick={paginationAttributes[2]} />
-            <Pagination.Last disabled={number === totalPages} onClick={paginationAttributes[3]} />
+            <Pagination.Last disabled={number === totalPages} onClick={paginationAttributes[3]}  />
         </Pagination>
 
     )

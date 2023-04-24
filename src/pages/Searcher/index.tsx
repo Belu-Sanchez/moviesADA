@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { CustomPagination, Grid } from "../../components/commons";
+import { CustomPagination, Posters } from "../../components/commons";
 import { FormSearch } from "../../components/forms";
 import { ImageMeme } from "../../components/images";
 import { withAuth } from "../../hoc";
@@ -39,7 +39,7 @@ const SearchMoviesPage = () => {
     return (
         <div>
             <FormSearch onSearch={setSearchQuery} />
-            <Grid items={movies} />
+            <Posters items={movies} className="grid"/>
             {movies.length <= 0 && <ImageMeme />}
             <CustomPagination totalPages={totalPage} onClick={setQuery}/>
         </div>

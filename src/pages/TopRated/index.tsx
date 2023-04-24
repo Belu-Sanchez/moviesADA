@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
-import { CustomPagination, Grid, Loader } from "../../components/commons";
+import { CustomPagination, Loader, Posters } from "../../components/commons";
 import { withAuth } from "../../hoc";
 import { getAllTopRated } from "../../services";
 
@@ -30,7 +30,8 @@ const TopRatedMoviesPage = () => {
 
     return (
         <>
-            <Grid items={movies} text={"Top Rated Movies"} />
+            <Posters items={movies} text={"Top Rated Movies"} className="grid"/>
+
             <CustomPagination totalPages={totalPage} onClick={setQuery}/>
         </>
 
